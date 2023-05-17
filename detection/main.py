@@ -8,7 +8,7 @@ num_images = 10
 
 PATH = os.path.join("Tensorflow","Images","Collected_Images")
 
-if not os.path.exists(PATH):
+'''if not os.path.exists(PATH):
     if os.name == 'posix':
         os.system("mkdir -p {PATH}")
     if os.name == 'nt':
@@ -34,9 +34,12 @@ for label in labels:
         print("3 seconds before the next picture is taken")
         time.sleep(3)
 
-        if cv2.waitKey(1) and 0xFF == ord('q'):
-            break
 camera.release()
-cv2.destroyAllWindows()
+cv2.destroyAllWindows()'''
 
+LABELPATH = os.path.join("Tensorflow","labelling")
+
+if not os.path.exists(LABELPATH):
+    os.system("mkdir " + LABELPATH)
+    os.system("git clone https://github.com/heartexlabs/labelImg" + LABELPATH)
 
