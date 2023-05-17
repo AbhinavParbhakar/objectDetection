@@ -4,7 +4,7 @@ import time
 import cv2
 
 labels = ["glass","laptop","phone","Nagisa","Abhinav"]
-num_images = 20
+num_images = 10
 
 PATH = os.path.join("Tensorflow","Images","Collected_Images")
 
@@ -27,10 +27,10 @@ for label in labels:
     for i in range(num_images):
         print("Collecting Image for image: " + str(i))
         ret, frame = camera.read() #reads
-        imagePath = os.path.join(PATH,label + str(uuid.uuid1()) +  "." + "jpg")
+        imagePath = os.path.join(PATH,label,str(uuid.uuid1()) +  "." + "jpg")
+        print(imagePath)
         cv2.imwrite(imagePath,frame)
         cv2.imshow('frame',frame)
-        cv2.waitKey(3000)
         print("3 seconds before the next picture is taken")
         time.sleep(3)
 
