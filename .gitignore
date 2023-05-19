@@ -3,3 +3,4 @@ detection/Lib
 detection/Scripts
 detection/pyvenv.cfg
 label-studio
+Tensorflow/labelling

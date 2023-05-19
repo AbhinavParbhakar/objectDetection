@@ -41,5 +41,12 @@ LABELPATH = os.path.join("Tensorflow","labelling")
 
 if not os.path.exists(LABELPATH):
     os.system("mkdir " + LABELPATH)
-    os.system("git clone https://github.com/heartexlabs/labelImg" + LABELPATH)
+    os.system("git clone https://github.com/tzutalin/labelImg" + LABELPATH)
 
+if os.name == 'posix':
+    os.system("cd " + LABELPATH)
+    os.system("make qt5py3")
+
+if os.name == 'nt':
+    os.system("cd " + LABELPATH)
+    os.system("pyrcc5 -o libs/resources.py resources.qrc")
